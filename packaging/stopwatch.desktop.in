@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=StopWatch
+GenericName=Секундомір і таймер
+Comment=Секундомір і таймер зворотного відліку
+Exec=@STOPWATCH_GUI_EXEC@
+Icon=@STOPWATCH_ICON@
+Terminal=false
+Categories=Utility;Clock;
+Keywords=stopwatch;timer;секундомір;таймер;час;
+StartupNotify=true

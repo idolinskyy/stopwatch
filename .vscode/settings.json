@@ -1,0 +1,6 @@
+{
+  "C_Cpp.default.cppStandard": "c++23",
+  "C_Cpp.default.cStandard": "c17",
+  "clangd.path": "clangd-22",
+  "C_Cpp.intelliSenseEngine": "disabled"
+}

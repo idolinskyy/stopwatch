@@ -1,0 +1,118 @@
+{
+  "version": 3,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 25,
+    "patch": 0
+  },
+  "configurePresets": [
+    {
+      "name": "dev",
+      "displayName": "Debug Config",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/dev",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "ENABLE_WARNINGS_AS_ERRORS": "OFF",
+        "ENABLE_SANITIZERS": "OFF",
+        "ENABLE_CLANG_TIDY": "OFF",
+        "BUILD_TESTS": "ON",
+        "BUILD_APPS": "ON",
+        "BUILD_GUI": "ON"
+      }
+    },
+    {
+      "name": "release",
+      "displayName": "Release Config",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/release",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "BUILD_TESTS": "OFF",
+        "BUILD_APPS": "ON",
+        "BUILD_GUI": "ON"
+      }
+    },
+    {
+      "name": "sanitized",
+      "displayName": "Debug with ASan and UBSan",
+      "inherits": "dev",
+      "binaryDir": "${sourceDir}/build/sanitized",
+      "cacheVariables": {
+        "ENABLE_SANITIZERS": "ON",
+        "ENABLE_WARNINGS_AS_ERRORS": "ON"
+      }
+    },
+    {
+      "name": "analyze",
+      "displayName": "Debug with clang-tidy",
+      "inherits": "dev",
+      "binaryDir": "${sourceDir}/build/analyze",
+      "cacheVariables": {
+        "ENABLE_CLANG_TIDY": "ON",
+        "ENABLE_WARNINGS_AS_ERRORS": "ON"
+      }
+    },
+    {
+      "name": "gui",
+      "displayName": "Debug with Qt Widgets",
+      "inherits": "dev",
+      "binaryDir": "${sourceDir}/build/gui",
+      "cacheVariables": {
+        "BUILD_GUI": "ON"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "dev",
+      "configurePreset": "dev"
+    },
+    {
+      "name": "release",
+      "configurePreset": "release"
+    },
+    {
+      "name": "sanitized",
+      "configurePreset": "sanitized"
+    },
+    {
+      "name": "analyze",
+      "configurePreset": "analyze"
+    },
+    {
+      "name": "gui",
+      "configurePreset": "gui"
+    }
+  ],
+  "testPresets": [
+    {
+      "name": "dev",
+      "configurePreset": "dev",
+      "output": {
+        "outputOnFailure": true
+      }
+    },
+    {
+      "name": "sanitized",
+      "configurePreset": "sanitized",
+      "output": {
+        "outputOnFailure": true
+      }
+    },
+    {
+      "name": "analyze",
+      "configurePreset": "analyze",
+      "output": {
+        "outputOnFailure": true
+      }
+    },
+    {
+      "name": "gui",
+      "configurePreset": "gui",
+      "output": {
+        "outputOnFailure": true
+      }
+    }
+  ]
+}

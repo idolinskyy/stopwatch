@@ -1,0 +1,7 @@
+CompileFlags:
+  CompilationDatabase: build/gui
+---
+If:
+  PathMatch: apps/gui/.*
+CompileFlags:
+  CompilationDatabase: build/gui

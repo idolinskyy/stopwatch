@@ -1,0 +1,35 @@
+StopWatch
+Copyright (c) 2026 Ihor Dolinskyi
+
+The StopWatch code, the embedded ElectroBoard 7 font, and the icon are under
+the GNU General Public License version 3, or any later version. See LICENSE.
+
+The components below keep their own licenses. They are not in this repository.
+
+## Qt 6
+
+The window links to Qt 6 (Widgets, Gui, Core) at runtime. Open-source Qt is
+available under the GNU LGPL version 3 and under the GNU GPL. The Qt used to
+build StopWatch keeps the license of that installation.
+
+Qt source and its license texts are in the Qt directory from the build, and at:
+
+https://download.qt.io
+https://www.qt.io/licensing/open-source-lgpl-obligations
+https://www.gnu.org/licenses/lgpl-3.0.html
+https://doc.qt.io/qt-6/licenses-used-in-qt.html
+
+The last page lists what Qt itself bundles (BSD, MIT, and others).
+The Qt libraries can be replaced with a compatible build.
+The program says the same under Help, About StopWatch and About Qt.
+
+## Catch2
+
+Tests may download Catch2 v3.5.2 from https://github.com/catchorg/Catch2
+(Boost Software License 1.0). It is not linked into StopWatch or StopWatch-gui.
+
+## Sounds
+
+The timer plays freedesktop theme files through paplay or pw-play when they
+are installed. Those files belong to the system. Otherwise the program plays
+a short tone of its own.

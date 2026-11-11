@@ -1,0 +1,11 @@
+Checks: >-
+  -*,
+  clang-analyzer-*,
+  bugprone-assert-side-effect,
+  bugprone-integer-division,
+  bugprone-sizeof-expression,
+  modernize-use-nullptr,
+  performance-for-range-copy,
+  performance-unnecessary-copy-initialization
+HeaderFilterRegex: '(^|/)(apps|libs|tests)/'
+SystemHeaders: false
